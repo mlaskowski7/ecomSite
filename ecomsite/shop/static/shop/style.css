@@ -1,3 +1,7 @@
+body{
+    background-color: whitesmoke;
+}
+
 .card-text{
     color: green;
     font-weight: 800;
@@ -14,6 +18,8 @@
     box-shadow: 0 5px 5px 0 #696969;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
+    justify-content: center;
 }
 
 button.btn-success{
@@ -32,3 +38,18 @@ a.page-link{
     font-weight: 700;
 }
 
+button{
+    margin: 5px 10px 5px 10px;
+    padding: 15px;
+    
+}
+
+a>button{
+    width: 80%;
+}
+
+
+nav{
+    border-bottom: 2px solid black;
+    box-shadow: 0 0 5px 0 #696969;
+}

@@ -1,0 +1,13 @@
+.row{
+    text-align: center;
+    margin-top: 20px;
+    color: green;
+    font-weight: 800;
+    justify-content: center;
+}
+
+.container{
+    box-shadow: 0 5px 5px 0 #696969;
+    border: 2px solid black;
+    border-radius: 15px;
+}
