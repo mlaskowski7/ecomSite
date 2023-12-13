@@ -59,9 +59,7 @@
                     <div class="card-body">
                         <div id="name{{product.id}}" class="card-title">{{product.title}}</div>
                     </div>
-                    <div class="card-text">
-                        $ {{product.price}}
-                    </div>
+                    <div class="card-text">$ <span id="price{{product.id}}">{{product.price}}</span></div>
 
                     <a href="/{{ product.id }}"><button class="btn btn-primary">View</button></a>
                     <button class="btn atc btn-warning" id="{{ product.id }}">Add to cart</button>

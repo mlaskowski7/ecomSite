@@ -19,10 +19,12 @@ $(document).on('click','.atc', (event) =>{
     if(cart[item_id] != undefined){
         quantity = cart[item_id][0] + 1;
         cart[item_id][0] = quantity;
+        cart[item_id][2] += parseFloat(document.getElementById('price'+item_id).innerHTML);
     } else{
         quantity = 1;
         name = document.getElementById("name"+item_id).innerHTML;
         cart[item_id] =[quantity,name];
+        cart[item_id][2] = parseFloat(document.getElementById('price'+item_id).innerHTML);
     }
     console.log(cart);
     localStorage.setItem('cart', JSON.stringify(cart));

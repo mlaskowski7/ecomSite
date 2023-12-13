@@ -26,13 +26,15 @@ def detail(request,id):
 def checkout(request):
 
     if(request.method == "POST"):
+        itemsInput = request.POST.get('items',"")
         nameInput = request.POST.get('name',"")
         emailInput = request.POST.get('email',"")
         addressInput = request.POST.get('address',"")
         cityInput = request.POST.get('city',"")
         countryInput = request.POST.get('country',"")
         zipcodeInput = request.POST.get('zipcode',"")
-        order = Order(name=nameInput,email=emailInput,address=addressInput,city=cityInput,country=countryInput,zipcode=zipcodeInput)
+        totalInput = request.POST.get('total',"")
+        order = Order(items=itemsInput,name=nameInput,email=emailInput,address=addressInput,city=cityInput,country=countryInput,zipcode=zipcodeInput,total=totalInput)
         order.save()
 
 
