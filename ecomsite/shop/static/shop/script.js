@@ -10,9 +10,7 @@ if(localStorage.getItem('cart') == null){
 updateCartDisplay();
 
 $(document).on('click','.atc', (event) =>{
-    console.log('atc clicked');
     let item_id = event.target.id.toString();
-    console.log(item_id);
 
     let quantity;
     let name;
@@ -26,11 +24,9 @@ $(document).on('click','.atc', (event) =>{
         cart[item_id] =[quantity,name];
         cart[item_id][2] = parseFloat(document.getElementById('price'+item_id).innerHTML);
     }
-    console.log(cart);
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartDisplay();
     displayCart(cart);
-    console.log(Object.keys(cart).length);
 });
 
 
@@ -52,7 +48,5 @@ function displayCart(cart){
 function updateCartDisplay(){
     cartEl.innerHTML = "Cart (" + Object.keys(cart).length + ")";
 }
-console.log('working');
-console.log("not working");
 updateCartDisplay();
 displayCart(cart);
