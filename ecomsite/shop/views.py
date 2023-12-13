@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Products
+from .models import Products, Order
 from django.core.paginator import Paginator
 
 # Create your views here.
@@ -22,3 +22,18 @@ def index(request):
 def detail(request,id):
     product_object = Products.objects.get(id=id)
     return render(request,'shop/detail.html',{'product_object':product_object})
+
+def checkout(request):
+
+    if(request.method == "POST"):
+        nameInput = request.POST.get('name',"")
+        emailInput = request.POST.get('email',"")
+        addressInput = request.POST.get('address',"")
+        cityInput = request.POST.get('city',"")
+        countryInput = request.POST.get('country',"")
+        zipcodeInput = request.POST.get('zipcode',"")
+        order = Order(name=nameInput,email=emailInput,address=addressInput,city=cityInput,country=countryInput,zipcode=zipcodeInput)
+        order.save()
+
+
+    return render(request,'shop/checkout.html')
